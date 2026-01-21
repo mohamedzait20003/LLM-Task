@@ -8,12 +8,18 @@ This script generates chat-like responses (10-40 words) using Google's Gemini AP
    - Visit https://aistudio.google.com/apikey
    - Create a new API key (free tier available)
 
-2. **Install dependencies:**
+2. **Set up Python virtual environment:**
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\Activate.ps1
+   ```
+
+3. **Install dependencies:**
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Configure API key:**
+4. **Configure API key:**
    - Copy the example environment file:
    ```bash
    copy .env.example .env
@@ -23,12 +29,12 @@ pip install -r requirements.txt
    GOOGLE_API_KEY=your-api-key-here
    ```
 
-4. **Run the script:**
+5. **Run the script:**
 ```bash
 python main.py
 ```
 
-5. **Enter your prompt** when asked (e.g., "Generate chat like response offering a young man opinion on football")
+6. **Enter your prompt** when asked (e.g., "Generate chat like response offering a young man opinion on football")
 
 ## Features
 
