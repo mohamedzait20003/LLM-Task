@@ -1,28 +1,46 @@
 # LLM Chat Generator
 
-This script generates chat-like responses from a young man's perspective on various topics using Meta's Llama 3.1 8B model.
+This script generates chat-like responses (10-40 words) using Google's Gemini API.
 
 ## Setup
 
-1. Install dependencies:
+1. **Get a Google API Key:**
+   - Visit https://aistudio.google.com/apikey
+   - Create a new API key (free tier available)
+
+2. **Install dependencies:**
 ```bash
 pip install -r requirements.txt
 ```
 
-2. Run the script:
+3. **Configure API key:**
+   - Copy the example environment file:
+   ```bash
+   copy .env.example .env
+   ```
+   - Edit `.env` and add your API key:
+   ```
+   GOOGLE_API_KEY=your-api-key-here
+   ```
+
+4. **Run the script:**
 ```bash
 python main.py
 ```
 
-3. Enter a topic when prompted (e.g., "soccer", "gambling", "AI")
+5. **Enter your prompt** when asked (e.g., "Generate chat like response offering a young man opinion on football")
 
 ## Features
 
-- Generates 10-40 word casual responses
-- Uses Llama 3.1 8B Instruct model (quantized Q4_K_M)
-- Models are automatically downloaded to the `models/` directory
-- GPU acceleration enabled (if available)
+- Generates 10-40 word chat-like responses
+- Uses Google Gemini 2.0 Flash Lite model
+- Free tier available with rate limits
+- Custom prompts via terminal input
 
-## Note
+## Rate Limits
 
-The first run will download the model (~5GB) to the `models/` directory. Subsequent runs will use the cached model.
+The free tier has rate limits. If you get a `429 RESOURCE_EXHAUSTED` error, wait 30-60 seconds and try again. For more details, visit: https://ai.google.dev/gemini-api/docs/rate-limits
+
+## Environment Variables
+
+- `GOOGLE_API_KEY` - Your Google AI API key (required)
